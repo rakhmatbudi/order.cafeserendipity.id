@@ -111,9 +111,7 @@
                 <div class="col-md-3">
                     <!-- Logo -->
                     <div class="module module-logo dark">
-                        <a href="index.html">
-                            <img src="assets/img/logo-light.svg" alt="" width="88">
-                        </a>
+                        <img src="assets/img/logo-light.svg" alt="" width="88">
                     </div>
                 </div>
             </div>
@@ -321,7 +319,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 // Redirect after 2 seconds
                 setTimeout(() => {
-                    window.location.href = 'menu-grid-collapse.html';
+                    window.location.href = 'menu-grid-collapse.php';
                 }, 2000);
                 
             } else {

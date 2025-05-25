@@ -9,17 +9,7 @@ include 'includes/navigation.php';
 ?>
 <!-- Content -->
 <div id="content">
-    <!-- Page Title -->
-    <div class="page-title bg-light">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 offset-lg-4">
-                    <h1 class="mb-0">Menu Grid</h1>
-                    <h4 class="text-muted mb-0">Some informations about our restaurant</h4>
-                </div>
-            </div>
-        </div>
-    </div>
+    
     <!-- Page Content -->
     <div class="page-content">
         <div class="container">

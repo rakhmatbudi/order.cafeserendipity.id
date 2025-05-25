@@ -1,3 +1,6 @@
+<?php
+// register.php
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -56,6 +59,40 @@
     .page-title h4 {
         font-size: 0.9rem !important;
     }
+}
+
+/* Loading spinner */
+.spinner {
+    display: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #f3f3f3;
+    border-top: 2px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-left: 10px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.error-message {
+    color: #dc3545;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+}
+
+.success-message {
+    color: #28a745;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
 }
 </style>
 
@@ -119,23 +156,37 @@
                     <div class="col-xl-8 col-lg-7 order-lg-first">
                         <div class="bg-white p-4 p-md-5 mb-4">
                             <h4 class="border-bottom pb-4"><i class="ti ti-user mr-3 text-primary"></i>Informasi Pelanggan</h4>
-                            <div class="row mb-5">
-                                <div class="form-group col-sm-6">
-                                    <label>Nama:</label>
-                                    <input type="text" class="form-control">
+                            
+                            <!-- Registration Form -->
+                            <form id="registrationForm">
+                                <div class="row mb-5">
+                                    <div class="form-group col-sm-6">
+                                        <label>Nama: <span style="color: red;">*</span></label>
+                                        <input type="text" id="customerName" name="name" class="form-control" required>
+                                        <div class="error-message" id="nameError"></div>
+                                    </div>
+                                    <div class="form-group col-sm-6">
+                                        <label>Nomor Telepon: <span style="color: red;">*</span></label>
+                                        <input type="text" id="customerPhone" name="phone_number" class="form-control" required>
+                                        <div class="error-message" id="phoneError"></div>
+                                    </div>
+                                    <div class="form-group col-sm-6">
+                                        <label>Alamat E-mail: <span style="color: red;">*</span></label>
+                                        <input type="email" id="customerEmail" name="email" class="form-control" required>
+                                        <div class="error-message" id="emailError"></div>
+                                    </div>
                                 </div>
-                                <div class="form-group col-sm-6">
-                                    <label>Nomor Telepon:</label>
-                                    <input type="text" class="form-control">
+                                
+                                <!-- Error/Success Messages -->
+                                <div id="formMessage" class="mb-3" style="display: none;"></div>
+                                
+                                <div class="text-center">
+                                    <button type="submit" id="submitBtn" class="btn btn-primary btn-lg">
+                                        <span>Daftar</span>
+                                        <div class="spinner" id="loadingSpinner"></div>
+                                    </button>
                                 </div>
-                                <div class="form-group col-sm-6">
-                                    <label>Alamat E-mail:</label>
-                                    <input type="email" class="form-control">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="text-center">
-                            <button class="btn btn-primary btn-lg"><span>Daftar</span></button>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -145,14 +196,11 @@
     </div>
     <!-- Content / End -->
 
-   
-
     <!-- Body Overlay -->
     <div id="body-overlay"></div>
 
 </div>
 
-<
 <!-- Cookies Bar -->
 <div id="cookies-bar" class="body-bar cookies-bar">
     <div class="body-bar-container container">
@@ -168,6 +216,174 @@
 
 <!-- JS Core -->
 <script src="dist/js/core.js"></script>
+
+<!-- Registration Form Script -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('registrationForm');
+    const submitBtn = document.getElementById('submitBtn');
+    const loadingSpinner = document.getElementById('loadingSpinner');
+    const formMessage = document.getElementById('formMessage');
+    
+    // Clear error messages
+    function clearErrors() {
+        document.getElementById('nameError').textContent = '';
+        document.getElementById('phoneError').textContent = '';
+        document.getElementById('emailError').textContent = '';
+        formMessage.style.display = 'none';
+    }
+    
+    // Show error message
+    function showError(message) {
+        formMessage.className = 'error-message mb-3';
+        formMessage.textContent = message;
+        formMessage.style.display = 'block';
+    }
+    
+    // Show success message
+    function showSuccess(message) {
+        formMessage.className = 'success-message mb-3';
+        formMessage.textContent = message;
+        formMessage.style.display = 'block';
+    }
+    
+    // Validate form
+    function validateForm() {
+        let isValid = true;
+        clearErrors();
+        
+        const name = document.getElementById('customerName').value.trim();
+        const phone = document.getElementById('customerPhone').value.trim();
+        const email = document.getElementById('customerEmail').value.trim();
+        
+        if (!name) {
+            document.getElementById('nameError').textContent = 'Nama harus diisi';
+            isValid = false;
+        }
+        
+        if (!phone) {
+            document.getElementById('phoneError').textContent = 'Nomor telepon harus diisi';
+            isValid = false;
+        } else if (!/^[0-9+\-\s()]+$/.test(phone)) {
+            document.getElementById('phoneError').textContent = 'Format nomor telepon tidak valid';
+            isValid = false;
+        }
+        
+        if (!email) {
+            document.getElementById('emailError').textContent = 'Email harus diisi';
+            isValid = false;
+        } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+            document.getElementById('emailError').textContent = 'Format email tidak valid';
+            isValid = false;
+        }
+        
+        return isValid;
+    }
+    
+    // Handle form submission
+    form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        if (!validateForm()) {
+            return;
+        }
+        
+        // Show loading state
+        submitBtn.disabled = true;
+        loadingSpinner.style.display = 'inline-block';
+        clearErrors();
+        
+        // Prepare payload
+        const payload = {
+            name: document.getElementById('customerName').value.trim(),
+            phone_number: document.getElementById('customerPhone').value.trim(),
+            email: document.getElementById('customerEmail').value.trim(),
+            last_visit: null
+        };
+        
+        try {
+            // Call API
+            const response = await fetch('https://api.pood.lol/customers', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify(payload)
+            });
+            
+            if (response.ok) {
+                const result = await response.json();
+                showSuccess('Pendaftaran berhasil! Mengalihkan ke menu...');
+                
+                // Store customer data if needed
+                localStorage.setItem('customerData', JSON.stringify(result));
+                
+                // Redirect after 2 seconds
+                setTimeout(() => {
+                    window.location.href = 'menu-grid-collapse.html';
+                }, 2000);
+                
+            } else {
+                // Handle API errors
+                const errorData = await response.json().catch(() => ({}));
+                let errorMessage = 'Terjadi kesalahan saat mendaftar. ';
+                
+                if (response.status === 400) {
+                    errorMessage += 'Data yang dimasukkan tidak valid.';
+                } else if (response.status === 409) {
+                    errorMessage += 'Email atau nomor telepon sudah terdaftar.';
+                } else if (response.status >= 500) {
+                    errorMessage += 'Server sedang mengalami gangguan. Silakan coba lagi nanti.';
+                } else {
+                    errorMessage += `Error ${response.status}: ${errorData.message || 'Silakan coba lagi.'}`;
+                }
+                
+                showError(errorMessage);
+            }
+            
+        } catch (error) {
+            console.error('Registration error:', error);
+            showError('Gagal terhubung ke server. Periksa koneksi internet Anda dan coba lagi.');
+        } finally {
+            // Reset loading state
+            submitBtn.disabled = false;
+            loadingSpinner.style.display = 'none';
+        }
+    });
+    
+    // Real-time validation
+    document.getElementById('customerName').addEventListener('blur', function() {
+        if (!this.value.trim()) {
+            document.getElementById('nameError').textContent = 'Nama harus diisi';
+        } else {
+            document.getElementById('nameError').textContent = '';
+        }
+    });
+    
+    document.getElementById('customerPhone').addEventListener('blur', function() {
+        const phone = this.value.trim();
+        if (!phone) {
+            document.getElementById('phoneError').textContent = 'Nomor telepon harus diisi';
+        } else if (!/^[0-9+\-\s()]+$/.test(phone)) {
+            document.getElementById('phoneError').textContent = 'Format nomor telepon tidak valid';
+        } else {
+            document.getElementById('phoneError').textContent = '';
+        }
+    });
+    
+    document.getElementById('customerEmail').addEventListener('blur', function() {
+        const email = this.value.trim();
+        if (!email) {
+            document.getElementById('emailError').textContent = 'Email harus diisi';
+        } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+            document.getElementById('emailError').textContent = 'Format email tidak valid';
+        } else {
+            document.getElementById('emailError').textContent = '';
+        }
+    });
+});
+</script>
 
 </body>
 

@@ -14,12 +14,7 @@
 
         <div class="footer-first-row row">
 
-            <div class="col-lg-3 text-center">
-
-                <img src="assets/img/logo-light.svg" alt="" width="88" class="mt-5 mb-5">
-
-            </div>
-
+            
             <div class="col-lg-4 col-md-6">
 
                 <h5 class="text-muted">Contacts</h5>

@@ -22,30 +22,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Raleway:wght@100;200;400;500&display=swap" rel="stylesheet">
 
 <!-- CSS Core -->
-<!--<link rel="stylesheet" href="dist/css/core.css" />-->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
-<style>
-
-.container { max-width: 1200px; margin: 0 auto; padding: 15px; }
-.row { display: flex; flex-wrap: wrap; margin: -15px; }
-.col-sm-6 { flex: 0 0 50%; padding: 15px; }
-.form-control { 
-    width: 100%; padding: 12px; border: 1px solid #ddd; 
-    border-radius: 4px; font-size: 16px;
-}
-.btn { 
-    padding: 12px 24px; border: none; border-radius: 4px; 
-    cursor: pointer; font-size: 16px;
-}
-.btn-primary { background: #007bff; color: white; }
-.btn-lg { padding: 16px 32px; font-size: 18px; }
-.bg-white { background: white; }
-.p-4 { padding: 1.5rem; }
-.mb-4 { margin-bottom: 1.5rem; }
-.text-center { text-align: center; }
-/* Add other minimal styles as needed */
-</style>
+<link rel="stylesheet" href="dist/css/core.css" />
 
 <!-- CSS Theme -->
 <link id="theme" rel="stylesheet" href="dist/css/theme-beige.css" />
@@ -117,84 +94,6 @@
     font-size: 0.875rem;
     margin-top: 0.25rem;
 }
-/* Enhanced form styles */
-.form-label {
-    font-weight: 500;
-    margin-bottom: 0.5rem;
-    color: #333;
-}
-
-.form-control {
-    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-}
-
-.form-control:focus {
-    border-color: #007bff;
-    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
-    outline: 0;
-}
-
-.form-control.is-invalid {
-    border-color: #dc3545;
-    box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
-}
-
-.form-control.is-valid {
-    border-color: #28a745;
-    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
-}
-
-.form-text {
-    font-size: 0.825rem;
-    color: #6c757d;
-    margin-top: 0.25rem;
-}
-
-/* Loading button animation */
-.btn-loading {
-    position: relative;
-    color: transparent !important;
-}
-
-.btn-loading .spinner {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: block !important;
-}
-#header_page {
-    position: relative;
-    overflow: hidden;
-}
-
-#header_page img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 1;
-    opacity: 0.3; /* Make it subtle since there's already a background */
-}
-
-#header_page .row {
-    position: relative;
-    z-index: 2;
-}
-
-/* Optional: Add additional overlay specifically for header_page */
-#header_page::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.2); /* Light overlay */
-    z-index: 1;
-}
 </style>
 
 </head>
@@ -224,7 +123,7 @@
     <header id="header-mobile" class="light">
 
         <div class="module module-logo" style="display: flex; align-items: center; justify-content: center; height: 60px;">
-            <h4 style="font-weight: bold; margin: 0;">Serendipity</h4>
+            <h4 style="font-weight: bold; margin: 0;">Cafe Serendipity</h4>
         </div>
 
     </header>
@@ -236,8 +135,8 @@
         <!-- Page Title - SLIMMER VERSION -->
         <div class="page-title bg-dark dark">
             <!-- BG Image -->
-            <div class="container" id="header_page">
-                <img src="assets/img/static/bg-croissant.jpg" alt="">
+            <div class="bg-image bg-parallax"><img src="assets/img/static/bg-croissant.jpg" alt=""></div>
+            <div class="container">
                 <div class="row">
                     <div class="col-lg-8 offset-lg-4">
                         <h1 class="mb-0">Self-Ordering System</h1>
@@ -258,49 +157,21 @@
                             
                             <!-- Registration Form -->
                             <form id="registrationForm">
-                                <div class="row mb-3">
-                                    <div class="col-12">
-                                        <div class="form-group mb-3">
-                                            <label class="form-label">Nama: <span style="color: red;">*</span></label>
-                                            <input type="text" 
-                                                   id="customerName" 
-                                                   name="name" 
-                                                   class="form-control" 
-                                                   placeholder="Masukkan nama lengkap Anda"
-                                                   required>
-                                            <div class="error-message" id="nameError"></div>
-                                        </div>
+                                <div class="row mb-5">
+                                    <div class="form-group col-sm-6">
+                                        <label>Nama: <span style="color: red;">*</span></label>
+                                        <input type="text" id="customerName" name="name" class="form-control" required>
+                                        <div class="error-message" id="nameError"></div>
                                     </div>
-                                </div>
-                                
-                                <div class="row mb-3">
-                                    <div class="col-12">
-                                        <div class="form-group mb-3">
-                                            <label class="form-label">Nomor Telepon: <span style="color: red;">*</span></label>
-                                            <input type="tel" 
-                                                   id="customerPhone" 
-                                                   name="phone_number" 
-                                                   class="form-control" 
-                                                   placeholder="0812-3456-7890"
-                                                   required>
-                                            <small class="form-text text-muted">Format: 08xx-xxxx-xxxx atau +62 8xx-xxxx-xxxx</small>
-                                            <div class="error-message" id="phoneError"></div>
-                                        </div>
+                                    <div class="form-group col-sm-6">
+                                        <label>Nomor Telepon: <span style="color: red;">*</span></label>
+                                        <input type="text" id="customerPhone" name="phone_number" class="form-control" required>
+                                        <div class="error-message" id="phoneError"></div>
                                     </div>
-                                </div>
-                                
-                                <div class="row mb-4">
-                                    <div class="col-12">
-                                        <div class="form-group mb-3">
-                                            <label class="form-label">Alamat E-mail: <span style="color: red;">*</span></label>
-                                            <input type="email" 
-                                                   id="customerEmail" 
-                                                   name="email" 
-                                                   class="form-control" 
-                                                   placeholder="nama@email.com"
-                                                   required>
-                                            <div class="error-message" id="emailError"></div>
-                                        </div>
+                                    <div class="form-group col-sm-6">
+                                        <label>Alamat E-mail: <span style="color: red;">*</span></label>
+                                        <input type="email" id="customerEmail" name="email" class="form-control" required>
+                                        <div class="error-message" id="emailError"></div>
                                     </div>
                                 </div>
                                 
@@ -309,7 +180,7 @@
                                 
                                 <div class="text-center">
                                     <button type="submit" id="submitBtn" class="btn btn-primary btn-lg">
-                                        <span id="buttonText">Daftar</span>
+                                        <span>Daftar</span>
                                         <div class="spinner" id="loadingSpinner"></div>
                                     </button>
                                 </div>
@@ -328,9 +199,21 @@
 
 </div>
 
+<!-- Cookies Bar -->
+<div id="cookies-bar" class="body-bar cookies-bar">
+    <div class="body-bar-container container">
+        <div class="body-bar-text">
+            <h4 class="mb-2">Cookies & GDPR</h4>
+            <p>This is a sample Cookies / GDPR information. You can use it easily on your site and even add link to <a href="#">Privacy Policy</a>.</p>
+        </div>
+        <div class="body-bar-action">
+            <button class="btn btn-primary" data-accept="cookies"><span>Accept</span></button>
+        </div>
+    </div>
+</div>
 
 <!-- JS Core -->
-<!--<script src="dist/js/core.js"></script>-->
+<script src="dist/js/core.js"></script>
 
 <!-- Registration Form Script -->
 <script>

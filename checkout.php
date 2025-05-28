@@ -119,28 +119,7 @@ include 'includes/navigation.php';
                                 </div>
                             </div>
                             
-                            <!-- Customer Information -->
-                            <div class="mt-4">
-                                <h5 class="border-bottom pb-3"><i class="ti ti-user mr-3 text-primary"></i>Customer Information</h5>
-                                <div class="row">
-                                    <div class="col-md-6 form-group">
-                                        <label for="customer_name">Full Name *</label>
-                                        <input type="text" class="form-control" id="customer_name" name="customer_name" required>
-                                    </div>
-                                    <div class="col-md-6 form-group">
-                                        <label for="customer_phone">Phone Number *</label>
-                                        <input type="tel" class="form-control" id="customer_phone" name="customer_phone" required>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="customer_address">Delivery Address *</label>
-                                    <textarea class="form-control" id="customer_address" name="customer_address" rows="3" required></textarea>
-                                </div>
-                                <div class="form-group">
-                                    <label for="order_notes">Order Notes (Optional)</label>
-                                    <textarea class="form-control" id="order_notes" name="order_notes" rows="2" placeholder="Special instructions for your order..."></textarea>
-                                </div>
-                            </div>
+                            
                         </form>
                     </div>
                     <div class="text-center">

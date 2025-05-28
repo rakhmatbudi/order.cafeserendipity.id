@@ -14,7 +14,9 @@ function renderMenuCategory($category_id, $category_name, $category_image, $menu
          data-toggle="collapse" 
          aria-expanded="<?php echo $expanded_attr; ?>">
         <div class="bg-image">
-            <img src="<?php echo htmlspecialchars($category_image); ?>" alt="<?php echo htmlspecialchars($category_name); ?>">
+            <img src="<?php echo htmlspecialchars($category_image); ?>" 
+             alt="<?php echo htmlspecialchars($category_name); ?>"
+             loading="lazy">
         </div>
         <h2 class="title"><?php echo htmlspecialchars($category_name); ?></h2>
     </div>

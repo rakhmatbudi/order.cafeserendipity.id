@@ -83,6 +83,39 @@
 
 <script src="dist/js/core.js"></script>
 
+<script>
+    
+    document.addEventListener('DOMContentLoaded', function() {
+        // Only add lazy loading to images that need it, avoid conflicts
+        const images = document.querySelectorAll('img:not([loading]):not([data-processed])');
+        
+        // Process images in batches to prevent overwhelming mobile browsers
+        function processImageBatch(imageArray, startIndex = 0) {
+            const batchSize = 5; // Process 5 images at a time
+            const endIndex = Math.min(startIndex + batchSize, imageArray.length);
+            
+            for (let i = startIndex; i < endIndex; i++) {
+                const img = imageArray[i];
+                img.setAttribute('loading', 'lazy');
+                img.setAttribute('data-processed', 'true');
+            }
+            
+            // Process next batch after a small delay
+            if (endIndex < imageArray.length) {
+                setTimeout(() => {
+                    processImageBatch(imageArray, endIndex);
+                }, 100);
+            }
+        }
+        
+        if (images.length > 0) {
+            processImageBatch(Array.from(images));
+        }
+    });
+});
+        
+</script>
+
 </body>
 
 </html>

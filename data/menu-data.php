@@ -119,14 +119,14 @@ return [
                 'id' => 13,
                 'name' => 'Chocolate Cake',
                 'description' => 'Rich chocolate, cream, berries',
-                'image' => 'assets/img/static/product-dessert.jpg',
+                'image' => 'assets/img/static/product-sushi.jpg',
                 'price' => 8.00
             ],
             [
                 'id' => 14,
                 'name' => 'Tiramisu',
                 'description' => 'Coffee, mascarpone, cocoa, ladyfingers',
-                'image' => 'assets/img/static/product-dessert.jpg',
+                'image' => 'assets/img/static/product-sushi.jpg',
                 'price' => 9.00
             ]
         ]
@@ -139,14 +139,14 @@ return [
                 'id' => 15,
                 'name' => 'Fresh Orange Juice',
                 'description' => 'Freshly squeezed orange juice',
-                'image' => 'assets/img/static/product-drink.jpg',
+                'image' => 'assets/img/static/product-sushi.jpg',
                 'price' => 5.00
             ],
             [
                 'id' => 16,
                 'name' => 'Coffee',
                 'description' => 'Premium arabica coffee beans',
-                'image' => 'assets/img/static/product-drink.jpg',
+                'image' => 'assets/img/static/product-sushi.jpg',
                 'price' => 4.00
             ]
         ]

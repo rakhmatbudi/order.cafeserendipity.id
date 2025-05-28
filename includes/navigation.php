@@ -18,10 +18,9 @@
                 <nav class="module module-navigation left mr-4">
                     <ul id="nav-main" class="nav nav-main">
                         <li><a href="menu-grid-collapse.php">Menu</a></li>
-                        <li><a href="page-about.html">About Us</a></li>
                         <li><a href="page-faq">FAQ</a></li>
+                        <li><a href="page-about.html">About Us</a></li>
                         <li><a href="page-offers.html">Offers</a></li>
-                        <li><a href="page-contact.html">Contact</a></li>
                     </ul>
                 </nav>
                 <div class="module left">

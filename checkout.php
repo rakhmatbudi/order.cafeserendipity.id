@@ -94,7 +94,7 @@ include 'includes/navigation.php';
                 <div class="col-xl-8 col-lg-7 order-lg-first">
                     <div class="bg-white p-4 p-md-5 mb-4">
                         <h4 class="border-bottom pb-4"><i class="ti ti-wallet mr-3 text-primary"></i>Payment Method</h4>
-                        <form id="checkout-form" method="POST" action="process-checkout.php">
+                        <form id="checkout-form" method="POST" action="confirmation.php">
                             <div class="row text-lg">
                                 <div class="col-md-4 col-sm-6 form-group">
                                     <label class="custom-control custom-radio">

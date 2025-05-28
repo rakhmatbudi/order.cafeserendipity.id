@@ -20,13 +20,13 @@
 
     <!-- Title -->
 
-    <title><?php echo isset($page_title) ? $page_title : 'Cafe Serendipity - Restaurant'; ?></title>
+    <title><?php echo isset($page_title) ? $page_title : 'Serendipity Ordering System'; ?></title>
 
 
 
     <!-- Favicons -->
 
-    <link rel="shortcut icon" href="assets/img/favicon.png">
+    <link rel="shortcut icon" href="assets/img/logo-symbol.svg">
 
     <link rel="apple-touch-icon" href="assets/img/favicon_60x60.png">
 

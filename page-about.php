@@ -29,17 +29,6 @@
 
 <body>
 
-<!-- Facebook Button / Root -->
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-
-
 <!-- Body Wrapper -->
 <div id="body-wrapper" class="animsition">
 
@@ -48,9 +37,17 @@
 
         <div class="container">
             <div class="row">
-                <div class="col-md-8 offset-md-2 text-center">
+                <div class="col-md-3">
+                    <!-- Logo -->
+                    <div class="module module-logo dark">
+                        <a href="index.html">
+                            <img src="assets/img/logo-light.svg" alt="" width="88">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-7">
                     <!-- Navigation -->
-                    <nav class="module module-navigation mr-4">
+                    <nav class="module module-navigation left mr-4">
                         <ul id="nav-main" class="nav nav-main">
                             <li class="has-dropdown">
                                 <a href="#">Home</a>
@@ -74,8 +71,6 @@
                                         <li><a href="page-gallery.html">Gallery</a></li>
                                         <li><a href="page-reviews.html">Reviews</a></li>
                                         <li><a href="page-faq.html">FAQ</a></li>
-                                        <li><a href="page-offer-single.html">Offer single</a></li>
-                                        <li><a href="page-product.html">Product</a></li>
                                     </ul>
                                     <div class="dropdown-image">
                                         <img src="http://assets.suelo.pl/soup/img/photos/dropdown-about.jpg" alt="">
@@ -109,6 +104,8 @@
                                 <a href="#">More</a>
                                 <div class="dropdown-container">
                                     <ul class="dropdown-mega">
+                                        <li><a href="page-offer-single.html">Offer single</a></li>
+                                        <li><a href="page-product.html">Product</a></li>
                                         <li><a href="book-a-table.html">Book a table</a></li>
                                         <li><a href="checkout.html">Checkout</a></li>
                                         <li><a href="confirmation.html">Confirmation</a></li>
@@ -124,9 +121,18 @@
                             </li>
                         </ul>
                     </nav>
-                    <div class="module">
-                        <a href="menu-list-navigation.html" class="btn btn-outline-primary"><span>Order</span></a>
+                    <div class="module left">
+                        <a href="menu-list-navigation.html" class="btn btn-outline-secondary"><span>Order</span></a>
                     </div>
+                </div>
+                <div class="col-md-2">
+                    <a href="#" class="module module-cart right" data-toggle="panel-cart">
+                        <span class="cart-icon">
+                            <i class="ti ti-shopping-cart"></i>
+                            <span class="notification">0</span>
+                        </span>
+                        <span class="cart-value">$<span class="value">0.00</span></span>
+                    </a>
                 </div>
             </div>
         </div>
@@ -158,130 +164,53 @@
     <!-- Content -->
     <div id="content">
 
-        <!-- Section - Main -->
-        <section class="section section-lg bg-dark dark">
+        <!-- Page Title -->
+        <div class="page-title border-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-7 offset-lg-5">
+                        <h1 class="mb-0">About Us</h1>
+                        <h4 class="text-muted mb-0">Some informations about our restaurant</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-            <div class="bg-image zooming"><img src="http://assets.suelo.pl/soup/img/photos/bg-croissant.jpg" alt=""></div>
+        <!-- Section -->
+        <section class="section section-bg-edge">
 
-            <div class="container text-center" data-local-scroll>
-                <img src="assets/img/logo-light.svg" alt="" width="111" class="mb-5">
-                <h4 class="mb-5">Restaurant with Online Ordering System Template</h4>
-                <a href="#concepts" class="btn btn-outline-primary btn-lg"><span>Pick a concept</span></a>
+            <div class="image left bottom col-md-7">
+                <div class="bg-image"><img src="http://assets.suelo.pl/soup/img/photos/bg-chef.jpg" alt=""></div>
+            </div>
+
+            <div class="container">
+                <div class="col-lg-5 offset-lg-5 col-md-9 offset-md-3">
+                    <div class="rate mb-5 rate-lg"><i class="fa fa-star active"></i><i class="fa fa-star active"></i><i class="fa fa-star active"></i><i class="fa fa-star active"></i><i class="fa fa-star"></i></div>
+                    <h2>The best food in London!</h2>
+                    <p class="lead">Donec a eros metus. Vivamus volutpat leo dictum risus ullamcorper condimentum. Cras sollicitudin varius condimentum. Praesent a dolor sem....</p>
+                    <p>Nam eleifend elementum sapien et bibendum. Nunc ac diam efficitur, ultrices lorem quis, consectetur odio. Nullam vulputate, eros quis accumsan cursus, elit lectus bibendum nulla, sed dapibus ligula tellus at purus. Fusce id eros id mi cursus semper. Quisque efficitur bibendum nunc a consectetur. Maecenas vitae quam iaculis, scelerisque purus nec, varius purus. Nullam eget varius elit. Donec eget facilisis nunc, non rutrum lorem.</p>
+                    <h6>Mark Johnson, Chef</h6>
+                    <img src="assets/img/svg/sign.svg" alt="" class="mb-5">
+                    <h4>What people say about Us?</h4>
+                    <a href="page-reviews.html" class="btn btn-outline-primary"><span>Check our reviews</span></a>
+                </div>
             </div>
 
         </section>
 
         <!-- Section -->
-        <section id="concepts" class="section bg-light">
+        <section class="section section-lg dark bg-dark">
 
-            <div class="container">
-                <h4 class="mb-5 text-center">Pick a concept</h4>
-                <div class="row">
-                    <div class="col-sm-6">
-                        <!-- Image Box -->
-                        <div class="image-box">
-                            <div class="image">
-                                <a href="index.html" target="_blank"><img src="assets/img/screens/home-basic.jpg" alt=""></a>
-                            </div>
-                            <div class="title">
-                                <a href="index.html" target="_blank">
-                                    <h5 class="mb-0">Basic</h5>
-                                    <span class="text-muted">Basic Slider</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <!-- Image Box -->
-                        <div class="image-box">
-                            <div class="image">
-                                <a href="index-dark.html" target="_blank"><img src="assets/img/screens/home-dark.jpg" alt=""></a>
-                            </div>
-                            <div class="title">
-                                <a href="index-dark.html" target="_blank">
-                                    <h5 class="mb-0">Dark <span class="badge badge-success">New!</span></h5>
-                                    <span class="text-muted">Inverted Mode</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <!-- Image Box -->
-                        <div class="image-box">
-                            <div class="image">
-                                <a href="index-fresh.html" target="_blank"><img src="assets/img/screens/home-fresh.jpg" alt=""></a>
-                            </div>
-                            <div class="title">
-                                <a href="index-fresh.html" target="_blank">
-                                    <h5 class="mb-0">Fresh <span class="badge badge-success">New!</span></h5>
-                                    <span class="text-muted">Fresh Design</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <!-- Image Box -->
-                        <div class="image-box">
-                            <div class="image">
-                                <a href="index-burgers.html" target="_blank"><img src="assets/img/screens/home-burgers.jpg" alt=""></a>
-                            </div>
-                            <div class="title">
-                                <a href="index-burgers.html" target="_blank">
-                                    <h5 class="mb-0">Burgers</h5>
-                                    <span class="text-muted">Fixed Background</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <!-- Image Box -->
-                        <div class="image-box">
-                            <div class="image">
-                                <a href="index-slider.html" target="_blank"><img src="assets/img/screens/home-slider.jpg" alt=""></a>
-                            </div>
-                            <div class="title">
-                                <a href="index-slider.html" target="_blank">
-                                    <h5 class="mb-0">Slider</h5>
-                                    <span class="text-muted">Fullwidth Slider</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <!-- Image Box -->
-                        <div class="image-box">
-                            <div class="image">
-                                <a href="index-video.html" target="_blank"><img src="assets/img/screens/home-video.jpg" alt=""></a>
-                            </div>
-                            <div class="title">
-                                <a href="index-video.html" target="_blank">
-                                    <h5 class="mb-0">Video</h5>
-                                    <span class="text-muted">Video Background</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <!-- Image Box -->
-                        <div class="image-box">
-                            <div class="image">
-                                <a href="https://www.facebook.com/suelopl" target="_blank"><img src="assets/img/screens/home-more.jpg" alt=""></a>
-                            </div>
-                            <div class="title">
-                                <a href="https://www.facebook.com/suelopl" target="_blank">
-                                    <h5 class="mb-0">Cooming Soon</h5>
-                                    <span class="text-muted">Follow me!</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+            <!-- BG Image -->
+            <div class="bg-image bg-parallax"><img src="http://assets.suelo.pl/soup/img/photos/bg-croissant.jpg" alt=""></div>
+
+            <div class="container text-center">
+                <div class="col-lg-8 offset-lg-2">
+                    <h2 class="mb-3">Would you like to visit Us?</h2>
+                    <h5 class="text-muted">Book a table even right now or make an online order!</h5>
+                    <a href="menu-list-navigation.html" class="btn btn-primary"><span>Order Online</span></a>
+                    <a href="book-a-table.html" class="btn btn-outline-primary"><span>Book a table</span></a>
                 </div>
-            </div>
-
-            <div class="text-center mt-5">
-                <h4>Follow me!</h4>
-                <!-- Facebook Button -->
-                <div class="fb-follow" data-href="https://www.facebook.com/suelopl" data-layout="button_count" data-size="small" data-show-faces="true"></div>
             </div>
 
         </section>
@@ -359,25 +288,14 @@
                 <h5 class="title">Your Cart</h5>
                 <button class="close" data-toggle="panel-cart"><i class="ti ti-close"></i></button>
             </div>
-            <div class="panel-cart-content">
+            <div class="panel-cart-content cart-details">
                 <table class="cart-table">
-                    <tr>
-                        <td class="title">
-                            <span class="name"><a href="#product-modal" data-toggle="modal">Pizza Chicked BBQ</a></span>
-                            <span class="caption text-muted">26”, deep-pan, thin-crust</span>
-                        </td>
-                        <td class="price">$9.82</td>
-                        <td class="actions">
-                            <a href="#product-modal" data-toggle="modal" class="action-icon"><i class="ti ti-pencil"></i></a>
-                            <a href="#" class="action-icon"><i class="ti ti-close"></i></a>
-                        </td>
-                    </tr>
                     <tr>
                         <td class="title">
                             <span class="name"><a href="#product-modal" data-toggle="modal">Beef Burger</a></span>
                             <span class="caption text-muted">Large (500g)</span>
                         </td>
-                        <td class="price">$9.82</td>
+                        <td class="price">$9.00</td>
                         <td class="actions">
                             <a href="#product-modal" data-toggle="modal" class="action-icon"><i class="ti ti-pencil"></i></a>
                             <a href="#" class="action-icon"><i class="ti ti-close"></i></a>
@@ -388,34 +306,31 @@
                             <span class="name"><a href="#product-modal" data-toggle="modal">Extra Burger</a></span>
                             <span class="caption text-muted">Small (200g)</span>
                         </td>
-                        <td class="price text-success">$0.00</td>
+                        <td class="price text-success">$9.00</td>
                         <td class="actions">
                             <a href="#product-modal" data-toggle="modal" class="action-icon"><i class="ti ti-pencil"></i></a>
                             <a href="#" class="action-icon"><i class="ti ti-close"></i></a>
                         </td>
                     </tr>
-                    <tr>
-                        <td class="title">
-                            <span class="name">Weekend 20% OFF</span>
-                        </td>
-                        <td class="price text-success">-$8.22</td>
-                        <td class="actions"></td>
-                    </tr>
                 </table>
                 <div class="cart-summary">
                     <div class="row">
                         <div class="col-7 text-right text-muted">Order total:</div>
-                        <div class="col-5"><strong>$21.02</strong></div>
+                        <div class="col-5"><strong>$<span class="cart-products-total">0.00</span></strong></div>
                     </div>
                     <div class="row">
                         <div class="col-7 text-right text-muted">Devliery:</div>
-                        <div class="col-5"><strong>$3.99</strong></div>
+                        <div class="col-5"><strong>$<span class="cart-delivery">0.00</span></strong></div>
                     </div>
                     <hr class="hr-sm">
                     <div class="row text-lg">
                         <div class="col-7 text-right text-muted">Total:</div>
-                        <div class="col-5"><strong>$24.21</strong></div>
+                        <div class="col-5"><strong>$<span class="cart-total">0.00</span></strong></div>
                     </div>
+                </div>
+                <div class="cart-empty">
+                    <i class="ti ti-shopping-cart"></i>
+                    <p>Your cart is empty...</p>
                 </div>
             </div>
         </div>
@@ -444,6 +359,153 @@
     <!-- Body Overlay -->
     <div id="body-overlay"></div>
 
+</div>
+
+<!-- Modal / Product -->
+<div class="modal fade product-modal" id="product-modal" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header modal-header-lg dark bg-dark">
+                <div class="bg-image"><img src="http://assets.suelo.pl/soup/img/photos/modal-add.jpg" alt=""></div>
+                <h4 class="modal-title">Specify your dish</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><i class="ti ti-close"></i></button>
+            </div>
+            <div class="modal-product-details">
+                <div class="row align-items-center">
+                    <div class="col-9">
+                        <h6 class="mb-1 product-modal-name">Boscaiola Pasta</h6>
+                        <span class="text-muted product-modal-ingredients">Pasta, Cheese, Tomatoes, Olives</span>
+                    </div>
+                    <div class="col-3 text-lg text-right">$<span class="product-modal-price"></span></div>
+                </div>
+            </div>
+            <div class="modal-body panel-details-container">
+                <!-- Panel Details / Size -->
+                <div class="panel-details panel-details-size">
+                    <h5 class="panel-details-title">
+                        <label class="custom-control custom-radio">
+                            <input name="radio_title_size" type="radio" class="custom-control-input">
+                            <span class="custom-control-indicator"></span>
+                        </label>
+                        <a href="#panel-details-sizes-list" data-toggle="collapse">Size</a>
+                    </h5>
+                    <div id="panel-details-sizes-list" class="collapse show">
+                        <div class="panel-details-content">
+                            <div class="product-modal-sizes">
+                                <div class="form-group">
+                                    <label class="custom-control custom-radio">
+                                        <input name="radio_size" type="radio" class="custom-control-input" checked>
+                                        <span class="custom-control-indicator"></span>
+                                        <span class="custom-control-description">Small - 100g ($9.99)</span>
+                                    </label>
+                                </div>
+                                <div class="form-group">
+                                    <label class="custom-control custom-radio">
+                                        <input name="radio_size" type="radio" class="custom-control-input">
+                                        <span class="custom-control-indicator"></span>
+                                        <span class="custom-control-description">Medium - 200g ($14.99)</span>
+                                    </label>
+                                </div>
+                                <div class="form-group">
+                                    <label class="custom-control custom-radio">
+                                        <input name="radio_size" type="radio" class="custom-control-input">
+                                        <span class="custom-control-indicator"></span>
+                                        <span class="custom-control-description">Large - 350g ($21.99)</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Panel Details / Additions -->
+                <div class="panel-details panel-details-additions">
+                    <h5 class="panel-details-title">
+                        <label class="custom-control custom-radio">
+                            <input name="radio_title_additions" type="radio" class="custom-control-input">
+                            <span class="custom-control-indicator"></span>
+                        </label>
+                        <a href="#panel-details-additions-content" data-toggle="collapse">Additions</a>
+                    </h5>
+                    <div id="panel-details-additions-content" class="collapse">
+                        <div class="panel-details-content">
+                            <!-- Additions List -->
+                            <div class="row product-modal-additions">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input">
+                                            <span class="custom-control-indicator"></span>
+                                            <span class="custom-control-description">Tomato ($1.29)</span>
+                                        </label>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input">
+                                            <span class="custom-control-indicator"></span>
+                                            <span class="custom-control-description">Ham ($1.29)</span>
+                                        </label>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input">
+                                            <span class="custom-control-indicator"></span>
+                                            <span class="custom-control-description">Chicken ($1.29)</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input">
+                                            <span class="custom-control-indicator"></span>
+                                            <span class="custom-control-description">Cheese($1.29)</span>
+                                        </label>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input">
+                                            <span class="custom-control-indicator"></span>
+                                            <span class="custom-control-description">Bacon ($1.29)</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Panel Details / Other -->
+                <div class="panel-details panel-details-form">
+                    <h5 class="panel-details-title">
+                        <label class="custom-control custom-radio">
+                            <input name="radio_title_other" type="radio" class="custom-control-input">
+                            <span class="custom-control-indicator"></span>
+                        </label>
+                        <a href="#panel-details-other" data-toggle="collapse">Other</a>
+                    </h5>
+                    <div id="panel-details-other" class="collapse">
+                        <form action="#">
+                            <textarea cols="30" rows="4" class="form-control" placeholder="Put this any other informations..."></textarea>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <button type="button" class="modal-btn btn btn-secondary btn-block btn-lg" data-action="add-to-cart"><span>Add to Cart</span></button>
+            <button type="button" class="modal-btn btn btn-secondary btn-block btn-lg" data-action="update-cart"><span>Update</span></button>
+        </div>
+    </div>
+</div>
+
+<!-- Cookies Bar -->
+<div id="cookies-bar" class="body-bar cookies-bar">
+    <div class="body-bar-container container">
+        <div class="body-bar-text">
+            <h4 class="mb-2">Cookies & GDPR</h4>
+            <p>This is a sample Cookies / GDPR information. You can use it easily on your site and even add link to <a href="#">Privacy Policy</a>.</p>
+        </div>
+        <div class="body-bar-action">
+            <button class="btn btn-primary" data-accept="cookies"><span>Accept</span></button>
+        </div>
+    </div>
 </div>
 
 <!-- JS Core -->

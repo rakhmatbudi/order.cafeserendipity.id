@@ -2,7 +2,7 @@
 
 // menu-grid-collapse.php - New refactored version
 
-$page_title = "Menu Grid - Cafe Serendipity";
+$page_title = "Serendipity Ordering System";
 
 // Load menu data
 

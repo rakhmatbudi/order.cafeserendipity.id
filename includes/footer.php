@@ -13,7 +13,9 @@
         <!-- Footer 1st Row -->
 
         <div class="footer-first-row row">
-
+            <div class="col-lg-3 text-center">
+                <a href="index.html"><img src="assets/img/logo-light.svg" alt="" width="200"></a>
+            </div>
             
             <div class="col-lg-4 col-md-6">
 

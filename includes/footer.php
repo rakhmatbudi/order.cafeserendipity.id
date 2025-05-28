@@ -81,38 +81,36 @@
 
 <!-- JS Core -->
 
-<script src="dist/js/core.js"></script>
+<script src="dist/js/core.js" defer></script>
 
 <script>
     
     document.addEventListener('DOMContentLoaded', function() {
-        // Only add lazy loading to images that need it, avoid conflicts
-        const images = document.querySelectorAll('img:not([loading]):not([data-processed])');
+        // Only process a few images at a time to prevent mobile browser hanging
+        const images = document.querySelectorAll('img:not([loading])');
         
-        // Process images in batches to prevent overwhelming mobile browsers
-        function processImageBatch(imageArray, startIndex = 0) {
-            const batchSize = 5; // Process 5 images at a time
-            const endIndex = Math.min(startIndex + batchSize, imageArray.length);
+        // Add lazy loading in small batches
+        let processed = 0;
+        const batchSize = 3; // Much smaller batch
+        
+        function processBatch() {
+            const end = Math.min(processed + batchSize, images.length);
             
-            for (let i = startIndex; i < endIndex; i++) {
-                const img = imageArray[i];
-                img.setAttribute('loading', 'lazy');
-                img.setAttribute('data-processed', 'true');
+            for (let i = processed; i < end; i++) {
+                images[i].setAttribute('loading', 'lazy');
             }
             
-            // Process next batch after a small delay
-            if (endIndex < imageArray.length) {
-                setTimeout(() => {
-                    processImageBatch(imageArray, endIndex);
-                }, 100);
+            processed = end;
+            
+            // Continue processing after page is fully loaded
+            if (processed < images.length) {
+                setTimeout(processBatch, 200);
             }
         }
         
-        if (images.length > 0) {
-            processImageBatch(Array.from(images));
-        }
+        // Start processing after a delay to let page finish loading
+        setTimeout(processBatch, 500);
     });
-});
         
 </script>
 

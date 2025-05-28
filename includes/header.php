@@ -46,7 +46,61 @@
 
     <!-- CSS Core -->
 
-    <link rel="stylesheet" href="dist/css/core.css" />
+    <!-- Load CSS asynchronously to prevent blocking -->
+    <link rel="preload" href="dist/css/core.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="dist/css/core.css"></noscript>
+    
+    <!-- Critical CSS inline for immediate rendering -->
+    <style>
+    /* Inline critical CSS for instant loading */
+    body {
+        font-family: 'Raleway', sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 15px;
+    }
+    
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    .col-6 { width: 50%; }
+    .col-md-4 { width: 33.333%; }
+    .col-lg-4 { width: 33.333%; }
+    
+    @media (max-width: 768px) {
+        .col-md-4 { width: 50%; }
+        .col-lg-4 { width: 50%; }
+    }
+    
+    /* Menu essentials */
+    .menu-category {
+        margin-bottom: 1rem;
+    }
+    
+    .menu-item {
+        padding: 1rem;
+        text-align: center;
+    }
+    
+    .menu-item img {
+        max-width: 100%;
+        height: auto;
+        max-height: 200px;
+        object-fit: cover;
+    }
+    
+    /* Loading state */
+    .page-loading {
+        opacity: 0.5;
+    }
+    </style>
 
 
 

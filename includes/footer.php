@@ -25,7 +25,7 @@
 
                     <li>
 
-                        <a href="blog-post.html" class="title">Address</a>
+                        <span class="date">Address</span>
 
                         <span class="date">Jalan Durian Barat III No 10, Jagakarsa, Jakarta Selatan</span>
 
@@ -33,7 +33,7 @@
 
                     <li>
 
-                        <a href="blog-post.html" class="title">Phone</a>
+                        <span class="date">Phone</span>
 
                         <span class="date">082-12345-8276</span>
 
@@ -53,7 +53,7 @@
 
                 <a href="https://maps.app.goo.gl/4xnbKGLrb6gD1SHF6" target="_blank" class="icon icon-social icon-circle icon-sm icon-google"><i class="fa fa-google"></i></a>
 
-                <a href="http://instagram.com/cafeserendpity" target="_blank" class="icon icon-social icon-circle icon-sm icon-instagram"><i class="fa fa-instagram"></i></a>
+                <a href="http://instagram.com/cafeserendipity" target="_blank" class="icon icon-social icon-circle icon-sm icon-instagram"><i class="fa fa-instagram"></i></a>
 
             </div>
 
